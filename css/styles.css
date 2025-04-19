@@ -1,0 +1,296 @@
+   /* Contenedor del video */
+   .video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.video-container video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ok*/
+    position: absolute; /* no*/
+    top: 0; /* no*/
+    left: 0; /* no*/
+    object-fit: cover; /* new*/
+    z-index: 0; /* new*/
+    min-width: 100%; /* new*/
+    min-height: 100%; /* new*/
+}
+/* Overlay con efecto */
+.video-container .overlay {
+    position:absolute; /* ok*/
+    top: 0; /* ok*/
+    left: 0; /* ok*/
+    width: 100%; /* ok*/
+    height: 100%; /* ok*/
+    background: rgba(0, 0, 0, 0.5); /* ok*/
+    z-index: 1;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; */
+}
+
+.video-container .content{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    display: none;
+}
+/**ESTILO DE CARTAS  */
+/*Clases destacadas
+• Usar card de Bootstrap con hover + animaciones jQuery (.animate() o hover()). */
+.card{
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.card-body h5{
+    text-align: center;
+}
+/**CONTADOR */
+/*Contador animado
+• Usar jQuery con setInterval o librerías como CountUp.js. */
+.contador{ /**tambien puede ser por ID #counterPuntos04 **/
+    font-size:50px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/** TESTIMONIO**/
+/**Testimonios en carrusel
+• Usar carousel de Bootstrap 5 + personalización con jQuery si querés controlar
+la velocidad, autoplay, pausa al hacer hover, etc. **/
+.carousel-item {
+    text-align: center;
+    padding: 4px;
+}
+.testimonial-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.tituloTestiminios{ 
+    text-align: center;
+    padding-top: 10px;
+    font-weight:900;
+    color: #007bff;
+}
+
+/**FOOTER **/
+/**Footer
+• Formulario con validación de Bootstrap + efecto spinner de jQuery. **/
+footer {
+    background: #343a40;
+    color: white;
+    padding: 30px 0;
+}
+.spinner-border {
+    display: none;
+}
+
+/* FOOTER Google map o mapa interactivo dentro del footer*/
+.mapa-container h2{
+    text-align: center;
+    background-color: #919191;
+    color: azure;
+}
+
+ #mapa{
+    width: 100%;
+    height: 500px;
+ }
+
+ gmp-map {
+    height: 100%;
+  }
+
+/* PAGINA CLASES*/
+/*Filtros por categoría (solo CSS o jQuery avanzado)
+• Podés usar checkbox + CSS o reemplazar por jQuery .filter() para más control. */
+.contenedorClases h2{
+    text-align: center;
+    padding-top: 10px;
+    font-weight:900;
+    color: #9ebb0b;
+}
+.horarios { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+.item { 
+    width: 100px; height: 100px; 
+    text-align: center; padding: 10px; 
+    background: lightgreen; 
+}
+/*<!-- Galería tipo Masonry--> */
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,230px);
+    gap:20px;
+    justify-content: center;
+    margin: 0 auto;
+    /* grid-template-rows: masonry; */ /*una vez definido el anchoxalto width="900" height="500" en cada imagen este atributo chau */
+    margin-top: 20px;
+}
+.grid-item{
+    width: 230px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    cursor: zoom-in;
+    background-color: lightgrey;
+}
+.grid-item:hover{
+    filter:opacity(0.5);
+}
+
+/*Tarjetas con efecto zoom
+• Bootstrap card + jQuery .hover() para mostrar overlays */
+.clasesCard-container{
+    display: flex;
+    gap: 20px;
+}
+.clasesCard{
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    font-weight: 900;
+}
+.clasesCard:hover{
+    transform: scale(0.8);
+    
+}
+.clasesOverlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: rgb(41, 235, 7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+    border-radius: 15px;
+    
+}
+.clases h2{
+    text-align: center;
+    padding-top: 10px;
+    font-weight:900;
+    color: #9ebb0b;
+}
+
+/*Efecto flip en tarjetas
+• Usar transformaciones CSS (transform: rotateY) + clases hover de Bootstrap o
+jQuery para controlar la rotación */
+
+.flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .flip-front {
+    background-color: #0d6efd;
+    color: white;
+  }
+
+  .flip-back {
+    background-color: #f8f9fa;
+    color: #212529;
+    transform: rotateY(180deg);
+    border: 1px solid #ccc;
+  }
+
+  /* Activador por hover */
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Activador por clase (para usar con jQuery) */
+  .flipped {
+    transform: rotateY(180deg) !important;
+  }
+
+  /*Barras de habilidades animadas
+• Usar progress de Bootstrap + jQuery .animate() para progresar al cargar. */
+  .progress {
+    height: 25px;
+  }
+  
+  .progress-bar {
+    width: 0; /* Inicialmente sin ancho */
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /*Rating con estrellas
+    • Crear sistema con radio ocultos + jQuery para manejar hover, click, y mostrar
+    valor. */
+  .rating {
+    display: flex;
+    flex-direction: row-reverse; /* Permite seleccionar desde la derecha */
+    justify-content: center;
+  }
+  
+  .rating input {
+    display: none; /* Ocultamos los radio buttons */
+  }
+  
+  .rating label {
+    font-size: 35px;
+
+    
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .rating input:checked ~ label,
+  .rating label:hover,
+  .rating label:hover ~ label {
+    color: #f39c12; /* Color de estrellas seleccionadas */
+  }
+
+.calificacionEstrellas p{
+    text-align: center;
+}
+
+
+
+
+
+
+

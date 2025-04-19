@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP03 DISEÑO RESPONSIVO</title>
+    <link rel="icon" type="image/pjg" href="/image/logoClubVillaSanMartin01.jpg">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/countup.js"></script> <!--CONTADOR ANIMADO con CountUp.js-->
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+               <div class="col-1"> </div>
+               <div class="col-9">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container-fluid">
+                          <a class="navbar-brand" href="#">Face..</a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                              <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/html/cvsmPartidosJugados.html">Jugados</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Equipos
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="/html/cvsmEqProximaFecha.html">Proxima Fecha</a></li>
+                                  <li><a class="dropdown-item" href="/html/cvsmEqTablaDePuntos.html">Tabla de Puntos</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="/html/cvsmEqMejoresCuatro.html">Mejores cuatro</a></li>
+                                </ul>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Jugadores
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="/html/cvsmJugProximaFechaSuspendidos.html">Proxima Fecha Suspendidos</a></li>
+                                  <li><a class="dropdown-item" href="/html/cvsmJugTablaDePuntos.html">Tabla de Puntos</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="/html/cvsmJugConMasPuntosYSancionados.html">Con Mas Puntos y Sancionados</a></li>
+                                </ul>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Club
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/html/cvsmClases.html">Clases</a></li>
+                                    <li><a class="dropdown-item" href="/html/cvsmEntrenadores.html">Entrenadores</a></li>
+                                    <li><a class="dropdown-item" href="/html/cvsmPrecios.html">Precios</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="/html/cvsmContactoAvanzado.html">Contacto Avanzado</a></li>
+                                </ul>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/html/cvsmBlogFitness.html">Novedades</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                              </li>
+
+                            </ul>
+                            <form class="d-flex" role="search">
+                              <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search">
+                              <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
+                          </div>
+                        </div>
+                    </nav>
+               </div>
+               <div class="col-2"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <section class="mejoresJugadas row" > <!--Hero con video de fondo -->
+                        <div class="col-4">
+                            <div class="video-container">
+                                <!--video de fondo-->
+                                <video autoplay muted loop>
+                                    <source src="/video/CincoMomentosNba01.mp4" type="video/mp4">
+                                    Tu navegador no soporta videos HTML5.
+                                </video>
+                                <!--capa overlay-->
+                                <div class="overlay"></div>
+                                <!--Contenido animado-->
+                                <div class="content">
+                                    <h1>Mejor Jugada 1</h1>
+                                    <p>Cinco mejores jugadas.</p>
+                                    <a href="/html/cvsmJugTablaDePuntos.html" class="btn btn-primary mt-3">ver mas...</a>
+                                </div>
+                            </div>
+                                <!--contenido inferior-->
+                            <div id="contenido" class="container py-5">
+                                <h2>Seccion inferior</h2>
+                                <p>Aqui relatamos las cinco mejores jugadas...</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="video-container">
+                                <!--video de fondo-->
+                                <video autoplay muted loop>
+                                    <source src="/video/mejorTapon01.mp4" type="video/mp4">
+                                    Tu navegador no soporta videos HTML5.
+                                </video>
+                                <!--capa overlay-->
+                                <div class="overlay"></div>
+                                <!--Contenido animado-->
+                                <div class="content">
+                                    <h1>Mejor Jugada 2</h1>
+                                    <p>Mejor bloqueo...</p>
+                                    <a href="/html/cvsmJugTablaDePuntos.html" class="btn btn-primary mt-3">ver mas...</a>
+                                </div>
+                            </div>
+                                <!--contenido inferior-->
+                            <div id="contenido" class="container py-5">
+                                <h2>Seccion inferior</h2>
+                                <p>Aqui te comentamos desde el inicio de jugada....</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="video-container">
+                                <!--video de fondo-->
+                                <video autoplay muted loop>
+                                    <source src="/video/StephCurryNba01.mp4" type="video/mp4">
+                                    Tu navegador no soporta videos HTML5.
+                                </video>
+                                <!--capa overlay-->
+                                <div class="overlay"></div>
+                                <!--Contenido animado-->
+                                <div class="content">
+                                    <h1>Mejor Jugada 3</h1>
+                                    <p>un excelente partido de Curry...</p>
+                                    <a href="/html/cvsmJugTablaDePuntos.html" class="btn btn-primary mt-3">ver mas...</a>
+                                </div>
+                            </div>
+                                <!--contenido inferior-->
+                            <div id="contenido" class="container py-5">
+                                <h2>Seccion inferior</h2>
+                                <p>Aqui relatamos las mejores jugadas de Curry...</p>
+                            </div>
+                        </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!--ESTILO DE CARTAS Clases destacadas
+• Usar card de Bootstrap con hover + animaciones jQuery (.animate() o hover()).-->
+            <section class="container" id="contenedorEquipos">
+                <div class="row">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card p-3">
+                                    <img src="/image/equipoBasketSFC02.jpeg" class="card-img-top" alt="Clase 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">SFC Team</h5>
+                                        <p class="card-text">Equipo de basket que pelea la zona media.</p>
+                                        <div class="card-footer bg-transparent border-success">Puntos
+                                            <!--CONTADOR ANIMADO
+                                            • Usar jQuery con setInterval o librerías como CountUp.js.-->
+                                            <div class="contador" id="counterPuntos01">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="col-md-3">
+                                <div class="card p-3">
+                                    <img src="/image/equipoBasketMapogos01.jpeg" class="card-img-top" alt="Clase 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mapogos</h5>
+                                        <p class="card-text">Equipo de que suele tener racha de altos y bajos.</p>
+                                        <div class="card-footer bg-transparent border-success">Puntos 
+                                            <!--CONTADOR ANIMADO
+                                            • Usar jQuery con setInterval o librerías como CountUp.js.-->
+                                            <div class="contador" id="counterPuntos02">0</div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="col-md-3">
+                                <div class="card p-3">
+                                    <img src="/image/equipoBasketMorenoWolf01.jpeg" class="card-img-top" alt="Clase 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Moreno Wolf</h5>
+                                        <p class="card-text">Equipo en descenso por el momento.</p>
+                                        <div class="card-footer bg-transparent border-success">Puntos
+                                            <!--CONTADOR ANIMADO
+                                            • Usar jQuery con setInterval o librerías como CountUp.js.-->
+                                            <div class="contador" id="counterPuntos03">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card p-3">
+                                    <img src="/image/equipoBasketPandas01.jpeg" class="card-img-top" alt="Clase 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pandas</h5>
+                                        <p class="card-text">Equipo recien integrado al torneo.</p>
+                                        <div class="card-footer bg-transparent border-success">Puntos
+                                                    <!--CONTADOR ANIMADO
+                                                    • Usar jQuery con setInterval o librerías como CountUp.js.-->
+                                            <div class="contador" id="counterPuntos04">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <section class="row" id="testimonios">
+            <article class="col-6">
+                <h2 class="tituloTestiminios">Jugadores</h2>
+                <div class="container mt-5">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/image/jugadorExtranio01.jpg" class="testimonial-img" alt="jugador01">
+                                <h5>Juan Perez</h5>
+                                <p>"Excelente partido los arbitros fueron justos.  "</p>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/image/jugadorExtranio02.jpg" class="testimonial-img" alt="Jugador02">
+                                <h5>Maria López</h5>
+                                <p>"El partido se puso algo aspero en el tercer cuarto."</p>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/image/jugadorEnzo01.png" class="testimonial-img" alt="Jugador03">
+                                <h5>Enzo Ayala</h5>
+                                <p>"Me gusto como nos dirigieron los arbitros porque evitaron creo que fueron justos."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="col-6">
+                <h2 class="tituloTestiminios">Arbitros</h2>
+                <div class="container mt-5">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/image/arbitro01.jpg" class="testimonial-img" alt="arbitro01">
+                                <h5>Raul Chavez</h5>
+                                <p>"Los jugadores jugaron fuerte."</p>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/image/arbitro02.jpeg" class="testimonial-img" alt="arbitro02">
+                                <h5>Pedro Romero</h5>
+                                <p>"El partido parecia ponerse cada vez mas competitivo."</p>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/image/arbitro03.jpg" class="testimonial-img" alt="arbitro03">
+                                <h5>Carolina Moises</h5>
+                                <p>"Los jugadores fueron fueron irrespetuosos."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <aside></aside>
+    </main>
+    <footer>
+        <div class="container">
+            <h4>Contacto</h4>
+            <form id="contactForm" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre y Apellido</label>
+                    <input type="text" class="form-control" id="nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo se permiten letras y espacios" required>
+                    <div class="invalid-feedback">Por favor ingresa tu nombre sin números u otro simbolo.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required >
+                    <div class="invalid-feedback">Por favor ingresa un email válido (ej: usuario@dominio.com).</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="spinner-border text-light ms-3" id="loadingSpinner"></div>
+            </form>
+        </div>
+        <div class="mapa-container">  <!-- FOOTER Google map o mapa interactivo dentro del footer-->
+            <h2>Mapa interactivo</h2>
+            <div id="mapa"></div>
+            <script>
+                function initMap() {
+                const ubicacion = { lat: -24.179706261232408, lng: -65.30966464400133 }; // Coordenadas ejemplo (San Salvador de Jujuy)
+                const mapa = new google.maps.Map(document.getElementById('mapa'), {
+                zoom: 12,
+                center: ubicacion
+                });
+                new google.maps.Marker({
+                position: ubicacion,
+                map: mapa
+                });
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_S-Pw6qwAJiF-orjJxajJVB2ytb7ZvJ0&callback=initMap" async defer></script>
+        </div>
+        <div class="bg-dark text-white text-center py-4">
+            <h5>Ubicación</h5>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d722.2205761706708!2d-65.31020524026637!3d-24.180028255361066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f14cb825991%3A0xe32ebb7b8e956c81!2sClub%20Villa%20San%20Mart%C3%ADn!5e0!3m2!1ses-419!2sar!4v1745034029788!5m2!1ses-419!2sar"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+    </footer>
+    <script>/** Hero con video de fondo **/
+        $(document).ready(function () {
+          $('.content').fadeIn(2500, function () {
+            $('h1').slideDown(1000);
+          });
+        });
+      </script>
+      <script> /** ESTILO DE CARTAS**/
+        $(document).ready(function() {
+            $(".card").hover(
+                function() {
+                    $(this).animate({ marginTop: "-10px" }, 200);
+                },
+                function() {
+                    $(this).animate({ marginTop: "0px" }, 200);
+                }
+            );
+        });
+    </script>
+    <script>/**CONTADOR ANIMADO
+            • Usar jQuery con setInterval o librerías como CountUp.js. **/
+        $(document).ready(function() {
+            let count = 0;
+            let target = 89;
+            let speed = 20; // Velocidad de incremento (ms)
+
+            let interval = setInterval(function() {
+                if (count < target) {
+                    count++;
+                    $("#counterPuntos01").text(count);
+                } else {
+                    clearInterval(interval);
+                }
+            }, speed);
+        });
+        $(document).ready(function() {
+            let count = 0;
+            let target = 78;
+            let speed = 20; // Velocidad de incremento (ms)
+
+            let interval = setInterval(function() {
+                if (count < target) {
+                    count++;
+                    $("#counterPuntos02").text(count);
+                } else {
+                    clearInterval(interval);
+                }
+            }, speed);
+        });
+        $(document).ready(function() {
+            let count = 0;
+            let target = 68;
+            let speed = 20; // Velocidad de incremento (ms)
+
+            let interval = setInterval(function() {
+                if (count < target) {
+                    count++;
+                    $("#counterPuntos03").text(count);
+                } else {
+                    clearInterval(interval);
+                }
+            }, speed);
+        });
+        $(document).ready(function() {
+            let count = 0;
+            let target = 45;
+            let speed = 20; // Velocidad de incremento (ms)
+
+            let interval = setInterval(function() {
+                if (count < target) {
+                    count++;
+                    $("#counterPuntos04").text(count);
+                } else {
+                    clearInterval(interval);
+                }
+            }, speed);
+        });
+    </script>
+    <script> /*CARRUCEL TESTIMONIOS*/
+        $(document).ready(function() {
+            let carousel = $("#testimonialCarousel");
+
+            // Ajustar velocidad
+            carousel.carousel({
+                interval: 3000, // Cambia cada 3 segundos
+                pause: false //Evita que se detenga cuando el usuario no interactúa.
+            });
+
+            // Pausar al hacer hover
+            carousel.hover( 
+                function() { carousel.carousel('pause'); },
+                function() { carousel.carousel('cycle'); }
+            );
+        });
+    </script>
+    <script> /*FOOTER Formulario con validación de Bootstrap + efecto spinner de jQuery. */
+        $(document).ready(function() {
+            $("#contactForm").submit(function(event) {
+                event.preventDefault(); // Evita el envío normal
+                let form = $(this);
+
+                if (!form[0].checkValidity()) { // Validación de Bootstrap
+                    form.addClass("was-validated");
+                    return;
+                }
+
+                $("#loadingSpinner").show(); // Mostrar spinner
+
+                setTimeout(function() { 
+                    $("#loadingSpinner").hide(); 
+                    alert("Formulario enviado correctamente!");
+                }, 2000); // Simula proceso de envío
+            });
+        });
+    </script>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

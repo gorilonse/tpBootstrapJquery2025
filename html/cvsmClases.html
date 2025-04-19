@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases</title>
+    <link rel="icon" type="image/pjg" href="/image/logoClubVillaSanMartin01.jpg">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/countup.js"></script> <!--CONTADOR ANIMADO con CountUp.js-->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+               <div class="col-1"> </div>
+               <div class="col-9">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container-fluid">
+                          <a class="navbar-brand" href="#">Face..</a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                              <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/index.html">Inicio</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/html/cvsmPartidosJugados.html">Jugados</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Equipos
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="/html/cvsmEqProximaFecha.html">Proxima Fecha</a></li>
+                                  <li><a class="dropdown-item" href="/html/cvsmEqTablaDePuntos.html">Tabla de Puntos</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="/html/cvsmEqMejoresCuatro.html">Mejores cuatro</a></li>
+                                </ul>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Jugadores
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="/html/cvsmJugProximaFechaSuspendidos.html">Proxima Fecha Suspendidos</a></li>
+                                  <li><a class="dropdown-item" href="/html/cvsmJugTablaDePuntos.html">Tabla de Puntos</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="/html/cvsmJugConMasPuntosYSancionados.html">Con Mas Puntos y Sancionados</a></li>
+                                </ul>
+                              </li>
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Club
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/html/cvsmClases.html">Clases</a></li>
+                                    <li><a class="dropdown-item" href="/html/cvsmEntrenadores.html">Entrenadores</a></li>
+                                    <li><a class="dropdown-item" href="/html/cvsmPrecios.html">Precios</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="/html/cvsmContactoAvanzado.html">Contacto Avanzado</a></li>
+                                </ul>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/html/cvsmBlogFitness.html">Novedades</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                              </li>
+
+                            </ul>
+                            <form class="d-flex" role="search">
+                              <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search">
+                              <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
+                          </div>
+                        </div>
+                    </nav>
+               </div>
+               <div class="col-2"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="row">
+            <section class="col-9">
+                <!--Filtros por categoría (CSS o jQuery avanzado)
+                • hecho con jQuery .filter() para más control.-->
+                <!-- <article class="contenedorClases">
+                    <h2>Clases</h2>
+                    <button data-filter="all">Mostrar Todos</button>
+                    <button data-filter="cat1">Lunes</button>
+                    <button data-filter="cat2">Martes</button>
+                    <button data-filter="cat3">Miercoles</button>
+                    <button data-filter="cat4">Jueves</button>
+                    <button data-filter="cat5">Viernes</button>
+                    <div class="horarios">
+                        <div class="item cat1">8 a 10hs</div>
+                        <div class="item cat1">20 a 22hs</div>
+                        <div class="item cat2">9 a 11hs</div>
+                        <div class="item cat2">18 a 20hs</div>
+                        <div class="item cat3">10 a 12hs</div>
+                        <div class="item cat3">14 a 18hs</div>
+                        <div class="item cat4">14 a 16hs</div>
+                        <div class="item cat4">22 a 00hs</div>
+                        <div class="item cat5">16 a 18hs</div>
+                        <div class="item cat5">18 a 20hs</div>
+                    </div>
+                </article> -->
+                <!--AGREGO ESTA PROPIEDAD A LA TABLA DE ARRIBA Tabla de horarios responsiva
+                • Usar tablas Bootstrap table-responsive + breakpoints.-->
+                <div class="container mt-4 contenedorClases">
+                    <h2 class="text-center">Horarios de Clases</h2>
+                    <!-- Tabla responsiva -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Día</th>
+                                    <th>Mañana</th>
+                                    <th>Tarde</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><button data-filter="cat1">Lunes</button></td>
+                                    <td><div class="item cat1">8 a 10hs</div></td>
+                                    <td><div class="item cat1">20 a 22hs</div></td>
+                                </tr>
+                                <tr>
+                                    <td><button data-filter="cat2">Martes</button></td>
+                                    <td><div class="item cat2">9 a 11hs</div></td>
+                                    <td><div class="item cat2">18 a 20hs</div></td>
+                                </tr>
+                                <tr>
+                                    <td><button data-filter="cat3">Miercoles</button></td>
+                                    <td><div class="item cat3">10 a 12hs</div></td>
+                                    <td><div class="item cat3">14 a 18hs</div></td>
+                                </tr>
+                                <tr>
+                                    <td><button data-filter="cat4">Jueves</button></td>
+                                    <td><div class="item cat4">14 a 16hs</div></td>
+                                    <td><div class="item cat4">22 a 00hs</div></td>
+                                </tr>
+                                <tr>
+                                    <td><button data-filter="cat5">Viernes</button></td>
+                                    <td><div class="item cat5">16 a 18hs</div></td>
+                                    <td><div class="item cat5">18 a 20hs</div></td>
+                                </tr>
+                                <tr>
+                                    <td><button data-filter="all">Mostrar Todos</button></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <article> <!--GALERIA TIPO MASONRY CSS-->
+                    <div class="grid-container">
+                        <img class="grid-item" src="https://picsum.photos/900/500.jpg" width="900" height="500">
+                        <img class="grid-item" src="https://picsum.photos/600/900.jpg" width="600" height="900">
+                        <img class="grid-item" src="https://picsum.photos/400/900.jpg" width="400" height="900">
+                        <img class="grid-item" src="https://picsum.photos/600/910.jpg" width="600" height="910">
+                        <img class="grid-item" src="https://picsum.photos/400/800.jpg" width="400" height="800">
+                        <img class="grid-item" src="https://picsum.photos/800/600.jpg" width="800" height="600">
+                        <img class="grid-item" src="https://picsum.photos/610/900.jpg" width="610" height="900">
+                        <img class="grid-item" src="https://picsum.photos/430/900.jpg" width="430" height="900">
+                        <img class="grid-item" src="https://picsum.photos/605/910.jpg" width="605" height="910">
+                        <img class="grid-item" src="https://picsum.photos/450/820.jpg" width="450" height="820">
+                    </div>
+                </article>
+            </section>
+            <!--Tarjetas con efecto zoom
+            • Bootstrap card + jQuery .hover() para mostrar overlays.-->
+            <aside class="clases col-3">
+                <h2>Precios</h2>
+                <div class="container mt-5">
+                    <div class="clasesCard-container">
+                        <div class="clasesCard" style="width: 18rem;">
+                            <img src="/image/logoClubVillaSanMartin01.jpg" class="card-img-top" alt="Imagen del Club">
+                            <div class="clasesOverlay">2 veces por semana $10.000</div>
+                        </div>
+                    </div>
+                    <div class="clasesCard-container">
+                        <div class="clasesCard" style="width: 18rem;">
+                            <img src="/image/logoClubVillaSanMartin01.jpg" class="card-img-top" alt="Imagen del Club">
+                            <div class="clasesOverlay">3 veces por semana $15.000</div>
+                        </div>
+                    </div>
+                    <div class="clasesCard-container">
+                        <div class="clasesCard" style="width: 18rem;">
+                            <img src="/image/logoClubVillaSanMartin01.jpg" class="card-img-top" alt="Imagen del Club">
+                            <div class="clasesOverlay">4 veces por semana $17.000</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <h4>Contacto</h4>
+            <form id="contactForm" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre y Apellido</label>
+                    <input type="text" class="form-control" id="nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo se permiten letras y espacios" required>
+                    <div class="invalid-feedback">Por favor ingresa tu nombre sin números u otro simbolo.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required >
+                    <div class="invalid-feedback">Por favor ingresa un email válido (ej: usuario@dominio.com).</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="spinner-border text-light ms-3" id="loadingSpinner"></div>
+            </form>
+        </div>
+        <div class="mapa-container">  <!-- FOOTER Google map o mapa interactivo dentro del footer-->
+            <h2>Mapa interactivo</h2>
+            <div id="mapa"></div>
+            <script>
+                function initMap() {
+                const ubicacion = { lat: -24.179706261232408, lng: -65.30966464400133 }; // Coordenadas ejemplo (San Salvador de Jujuy)
+                const mapa = new google.maps.Map(document.getElementById('mapa'), {
+                zoom: 12,
+                center: ubicacion
+                });
+                new google.maps.Marker({
+                position: ubicacion,
+                map: mapa
+                });
+                }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_S-Pw6qwAJiF-orjJxajJVB2ytb7ZvJ0&callback=initMap" async defer></script>
+        </div>
+        <div class="bg-dark text-white text-center py-4">
+            <h5>Ubicación</h5>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d722.2205761706708!2d-65.31020524026637!3d-24.180028255361066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f14cb825991%3A0xe32ebb7b8e956c81!2sClub%20Villa%20San%20Mart%C3%ADn!5e0!3m2!1ses-419!2sar!4v1745034029788!5m2!1ses-419!2sar"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
+    </footer>
+
+    <script> /*FILTRO CLASES */
+        $(document).ready(function() {
+            $("button").click(function() {
+                let filtro = $(this).data("filter");
+
+                if (filtro == "all") {
+                    $(".item").fadeIn();
+                } else {
+                    $(".item").hide().filter("." + filtro).fadeIn();
+                }
+            });
+        });
+    </script>
+    <script> /*MASONRY o PINTERES ESTILO 
+             Galería tipo Masonry
+             Usar CSS Grid o integrar Masonry.js + jQuery para mejor efecto dinámico */
+        $('.grid-container').masonry({
+          // options
+          itemSelector: '.grid-item',
+          columnWidth: 230,
+            gutter:20,
+            isFitWitdth:true
+        });
+    </script>
+    <script>/* Tarjetas con efecto zoom
+            • Bootstrap card + jQuery .hover() para mostrar overlays. */
+        $(document).ready(function() {
+            $(".clasesCard").hover(
+                function() { $(this).find(".clasesOverlay").fadeIn(); },
+                function() { $(this).find(".clasesOverlay").fadeOut(); }
+            );
+        });
+    </script>
+
+    <script> /*FOOTER Formulario con validación de Bootstrap + efecto spinner de jQuery. */
+        $(document).ready(function() {
+            $("#contactForm").submit(function(event) {
+                event.preventDefault(); // Evita el envío normal
+                let form = $(this);
+
+                if (!form[0].checkValidity()) { // Validación de Bootstrap
+                    form.addClass("was-validated");
+                    return;
+                }
+
+                $("#loadingSpinner").show(); // Mostrar spinner
+
+                setTimeout(function() { 
+                    $("#loadingSpinner").hide(); 
+                    alert("Formulario enviado correctamente!");
+                }, 2000); // Simula proceso de envío
+            });
+        });
+    </script>
+    
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
