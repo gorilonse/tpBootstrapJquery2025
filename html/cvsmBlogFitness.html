@@ -291,6 +291,22 @@
     });
     </script>
 
+    <script> /* Scroll Reveal
+            • Usar IntersectionObserver o librerías como AOS.js (compatible con jQuery).*/
+          document.addEventListener("DOMContentLoaded", function() {
+      let observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      });
+    
+      document.querySelectorAll(".grid-item, .comment").forEach((element) => {
+        observer.observe(element);
+      });
+    });
+    </script>
     <script> /*FOOTER Formulario con validación de Bootstrap + efecto spinner de jQuery. */
         $(document).ready(function() {
             $("#contactForm").submit(function(event) {
