@@ -301,11 +301,22 @@ jQuery .on("input", ...).*/
     border-color: #2ecc71;
   }
 
-  /* */
+  /*Tabla con hover
+    • Bootstrap table-hover + jQuery para resaltar fila/columna seleccionada. */
+  .table-hover tbody tr:hover {
+    background-color: #f1c40f !important;
+  }
   
+  .highlight {
+    background-color: rgba(213, 135, 8, 0.17) !important;
+  }
+  
+
   
 
 
+
+  
 
 
 

@@ -92,7 +92,59 @@
       <div class="container">
         <div class="row">
            <div class="col-1"> </div>
-           <div class="col-9"></div>
+           <div class="col-9">
+            <!--Tabla con hover
+            • Bootstrap table-hover + jQuery para resaltar fila/columna seleccionada.-->
+            <div class="container mt-5">
+              <h2 class="text-center">Tabla de Precios</h2>
+              <!-- Toggle de mensual/anual 
+               VA FUERA DE LA TABLA PERO DENTRO DEL CONTENEDOR, SON LAS 4 LINEAS SIGUIENTES-->
+              <div class="text-center mb-3">
+                <input type="checkbox" class="form-check-input" id="toggle-precio">
+                <label for="toggle-precio" class="form-check-label ms-2">Mostrar precios anuales</label>
+              </div>
+
+              <table class="table table-hover text-center">
+                <thead>
+                  <tr>
+                    <th>Plan</th>
+                    <th>Precio</th>
+                    <th>Beneficios</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <!-- <td>Básico</td> -->
+                    <td data-bs-toggle="tooltip" title="Ideal para principiantes">Básico</td>
+                    <!--<td>$7.000/mes</td>-->
+                    <td class="precio" data-mensual="7.000" data-anual="70.000">$7.000/mes</td>
+                    <!--SE ELIMINO PARA PONER TOOLPITS se modifico aqui y el Script 
+                    <td>Acceso limitado 2 practicas por semana</td> --> 
+                    <!--Tooltips explicativos
+                      • Usar tooltips nativos de Bootstrap o personalizados con jQuery. -->
+                    <td data-bs-toggle="tooltip" title="Acceso limitado al club">Acceso limitado 2 practicas por semana</td>
+                  </tr>
+                  <tr>
+                    <!-- <td>Pro</td> -->
+                    <td data-bs-toggle="tooltip" title="Para usuarios avanzados">Pro</td>
+                    <!--<td>$13.000/mes</td>-->
+                    <td class="precio" data-mensual="13.000" data-anual="130.000">$13.000/mes</td>
+                    <!-- <td>Acceso total 4 practicas por semana</td> -->
+                    <td data-bs-toggle="tooltip" title="Acceso completo al club">Acceso total 4 practicas por semana</td>
+                  </tr>
+                  <tr>
+                    <!-- <td>Premium</td> -->
+                    <td data-bs-toggle="tooltip" title="Incluye soporte VIP">Premium</td>
+                    <!--<td>$18.000/mes</td>-->
+                    <td class="precio" data-mensual="18.000" data-anual="180.000">$18.000/mes</td>
+                    <!-- <td>Acceso VIP a partidos y 4 practicas por semana</td> -->
+                    <td data-bs-toggle="tooltip" title="Atención prioritaria + accesos preferenciales">Acceso VIP a partidos y 4 practicas por semana</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+           </div>
            <div class="col-2"></div>
         </div>
       </div>
@@ -111,7 +163,13 @@
                     <input type="email" class="form-control" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required >
                     <div class="invalid-feedback">Por favor ingresa un email válido (ej: usuario@dominio.com).</div>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">
+                  Enviar
+                </button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Cuidado! esto borra los datos del formulario">
+                  Borrar
+                </button>
+                
                 <div class="spinner-border text-light ms-3" id="loadingSpinner"></div>
             </form>
         </div>
@@ -143,7 +201,51 @@
         <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
     </footer>
     
-
+    <script> /*Tabla con hover
+            • Bootstrap table-hover + jQuery para resaltar fila/columna seleccionada. */
+            $(document).ready(function() {
+        $("table tbody tr").hover(function() {
+          $(this).addClass("highlight");
+        }, function() {
+          $(this).removeClass("highlight");
+        });
+      
+        $("table tbody td").hover(function() {
+          var colIndex = $(this).index();
+          $("table tbody tr").each(function() {
+            $(this).find("td").eq(colIndex).addClass("highlight");
+          });
+        }, function() {
+          var colIndex = $(this).index();
+          $("table tbody tr").each(function() {
+            $(this).find("td").eq(colIndex).removeClass("highlight");
+          });
+        });
+        /*Toggle mensual/anual
+        • Usar toggle con botón de Bootstrap + jQuery .on("change") para cambiar
+        precios. 
+        REQUIERE ESTAS SCRIPT, 4 lineas afura del FOMR y dentro del contenedor y modifcar el TD de las tablas agregando clase y atributos
+        como "<td class="precio" data-mensual="10" data-anual="100">$10/mes</td>"*/
+        // Toggle para cambiar precios
+        $("#toggle-precio").on("change", function() {
+          var anual = $(this).prop("checked");
+        
+          $(".precio").each(function() {
+            var precio = anual ? $(this).attr("data-anual") : $(this).attr("data-mensual");
+            var tipo = anual ? "/año" : "/mes";
+            $(this).text("$" + precio + tipo);
+          });
+        });
+        /*ACTIVAR LOS AVISOS TOOLTIPS
+        Tooltips explicativos
+        • Usar tooltips nativos de Bootstrap o personalizados con jQuery. */
+        // Activar tooltips de Bootstrap
+           var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+           var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+             return new bootstrap.Tooltip(tooltipTriggerEl);
+           });
+            });
+    </script>
     <script> /*FOOTER Formulario con validación de Bootstrap + efecto spinner de jQuery. */
         $(document).ready(function() {
             $("#contactForm").submit(function(event) {
