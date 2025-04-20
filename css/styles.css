@@ -311,9 +311,96 @@ jQuery .on("input", ...).*/
     background-color: rgba(213, 135, 8, 0.17) !important;
   }
   
+/*6. Blog Fitness (Estilo Revista)
+    Diseño tipo periódico
+    • CSS Grid + clases de Bootstrap para columnas. */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  /* .grid-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  } */
+   /*PARA AGREGAR comente arriba y agregue ""la clase ".grid-item"" 
+   Filtros por tags
+    • Usar jQuery .filter() para mostrar/ocultar artículos.*/
+  .grid-item {
+    display: block;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .grid-item img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .destaque {
+    grid-column: span 2; /* Ocupa toda la fila */
+  }
+  
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /*Comentarios con avatares
+• Crear con pseudo-elementos CSS + jQuery para agregar dinámicas (responder,
+destacar, etc.) */
+
+.comments {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .comment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #3498db;
+    margin-right: 15px;
+    position: relative;
+  }
+  
+  .avatar::before {
+    content: "👤"; /* Representación de avatar */
+    position: absolute;
+    font-size: 28px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .comment-content {
+    flex-grow: 1;
+  }
+  
+  .highlight {
+    background: rgba(243, 156, 18, 0.3) !important;
+  }
 
   
-
+  /* 
+  */
 
 
   

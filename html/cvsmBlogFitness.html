@@ -89,13 +89,110 @@
         </div>
     </header>
     <main>
-      <div class="container">
+      <header class="text-center py-4 bg-dark text-white">
+        <h1>Blog Fitness</h1>
+        <p>Nutrición, Rutinas y Bienestar</p>
+      </header>
+      <div class="container my-5">
         <div class="row">
            <div class="col-1"> </div>
-           <div class="col-9"></div>
-           <div class="col-2"></div>
+           <div class="col-9 col-md-8">
+            <!-- Filtros por categoría -->
+             <!--AQUI AGREGO esta etiqueta DIV 
+              Filtros por tags
+               Usar jQuery .filter() para mostrar/ocultar artículos.
+               TAMBIEN modifico el DIV
+               <div class="grid-item" data-category="ejercicio">
+            -->
+            <div class="text-center mb-3">
+              <button class="btn btn-outline-primary filter-btn" data-filter="all">Todos</button>
+              <button class="btn btn-outline-success filter-btn" data-filter="nutricion">Nutrición</button>
+              <button class="btn btn-outline-warning filter-btn" data-filter="musculacion">Musculacion</button>
+              <button class="btn btn-outline-danger filter-btn" data-filter="bienestar">Bienestar</button>
+              <button class="btn btn-outline-danger filter-btn" data-filter="funcional">Funcional</button>
+            </div>
+
+            <section class="grid-container">
+              
+              <!-- <div class="grid-item"> -->
+                <div class="grid-item" data-category="nutricion">
+                <img src="/image/logoClubVillaSanMartin02.jpeg" alt="nutricion">
+                <h3>Nutrición</h3>
+                <p>Los mejores alimentos para recuperar energía después del ejercicio.</p>
+              </div>
+              <div class="grid-item" data-category="bienestar">
+                <img src="/image/logoClubVillaSanMartin02.jpeg" alt="bienestar">
+                <h3>Bienestar</h3>
+                <p>Cómo el yoga puede mejorar tu rendimiento físico y mental.</p>
+              </div>
+              <div class="grid-item" data-category="musculacion">
+                <img src="/image/logoClubVillaSanMartin02.jpeg" alt="musculacion">
+                <h3>Musculacion</h3>
+                <p>Crea masa muscular o bien crea potencia en tu cuerpo.</p>
+              </div>
+              <div class="grid-item" data-category="funcional">
+                <img src="/image/logoClubVillaSanMartin02.jpeg" alt="funcional">
+                <h3>Funcional</h3>
+                <p>Aprende a trabajar con propio peso de tu cuerpo.</p>
+              </div>
+            </section>
+           </div>
+           <div class="col-2">
+            <aside class="col-md-4">
+              <div class="p-3 bg-light">
+                <h3>Últimos Artículos</h3>
+                <ul>
+                  <li><a href="#">Ejercicios para fortalecer brazos</a></li>
+                  <li><a href="#">¿Cuánta proteína necesitas al día?</a></li>
+                  <li><a href="#">Rutinas rápidas para quemar grasa</a></li>
+                </ul>
+              </div>
+            </aside>
+           </div>
         </div>
       </div>
+      <!--Comentarios con avatares
+        • Crear con pseudo-elementos CSS + jQuery para agregar dinámicas (responder,
+        destacar, etc.)
+      -->
+      <section>
+        <div class="comments">
+          <div class="comment" data-id="1">
+            <div class="avatar"></div>
+            <div class="comment-content">
+              <strong>Juan Pérez</strong>
+              <p>¡Gran artículo! Me ayudó mucho en mi entrenamiento.</p>
+              <button class="btn btn-sm btn-outline-primary reply-btn">Responder</button>
+              <button class="btn btn-sm btn-outline-warning highlight-btn">Destacar</button>
+            </div>
+          </div>
+      
+          <div class="comment" data-id="2">
+            <div class="avatar"></div>
+            <div class="comment-content">
+              <strong>María López</strong>
+              <p>¿Algún consejo para mejorar resistencia?</p>
+              <button class="btn btn-sm btn-outline-primary reply-btn">Responder</button>
+              <button class="btn btn-sm btn-outline-warning highlight-btn">Destacar</button>
+            </div>
+          </div>
+          <div class="comment" data-id="3">
+            <div class="avatar"></div>
+            <div class="comment-content">
+              <strong>Carlos Rodriguez</strong>
+              <p>¿Como podria bajar rapido de paso?</p>
+              <button class="btn btn-sm btn-outline-primary reply-btn">Responder</button>
+              <button class="btn btn-sm btn-outline-warning highlight-btn">Destacar</button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Formulario para agregar comentario -->
+        <div class="mt-4">
+          <textarea id="commentText" class="form-control" placeholder="Escribe tu comentario..."></textarea>
+          <button id="addComment" class="btn btn-success mt-2">Publicar</button>
+        </div>
+      </section>
     </main>
     <footer>
         <div class="container">
@@ -143,6 +240,56 @@
         <p>&copy; 2024 Mi Página. Todos los derechos reservados.</p>
     </footer>
     
+    <script>/*Filtros por tags
+          • Usar jQuery .filter() para mostrar/ocultar artículos. */
+        $(document).ready(function() {
+          $(".filter-btn").on("click", function() {
+            var filter = $(this).attr("data-filter");
+          
+            if (filter === "all") {
+              $(".grid-item").fadeIn();
+            } else {
+              $(".grid-item").hide().filter("[data-category='" + filter + "']").fadeIn();
+            }
+          });
+        });
+    </script>
+
+    <script> /*Comentarios con avatares
+              • Crear con pseudo-elementos CSS + jQuery para agregar dinámicas (responder,
+              destacar, etc.) */
+          $(document).ready(function() {
+      // Destacar comentario
+      $(".highlight-btn").on("click", function() {
+        $(this).closest(".comment").toggleClass("highlight");
+      });
+    
+      // Responder comentario
+      $(".reply-btn").on("click", function() {
+        var user = $(this).siblings("strong").text();
+        $("#commentText").val("@"+user+" ");
+        $("#commentText").focus();
+      });
+    
+      // Agregar comentario
+      $("#addComment").on("click", function() {
+        var texto = $("#commentText").val().trim();
+        if (texto !== "") {
+          var nuevoComentario = `<div class="comment">
+              <div class="avatar"></div>
+              <div class="comment-content">
+                <strong>Usuario Anónimo</strong>
+                <p>${texto}</p>
+                <button class="btn btn-sm btn-outline-primary reply-btn">Responder</button>
+                <button class="btn btn-sm btn-outline-warning highlight-btn">Destacar</button>
+              </div>
+            </div>`;
+          $(".comments").append(nuevoComentario);
+          $("#commentText").val(""); // Limpiar textarea
+        }
+      });
+    });
+    </script>
 
     <script> /*FOOTER Formulario con validación de Bootstrap + efecto spinner de jQuery. */
         $(document).ready(function() {
